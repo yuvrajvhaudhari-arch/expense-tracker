@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modern Expense Tracker</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background-overlay"></div>
+
+<!-- ========================= -->
+<!-- TOP NAVBAR -->
+<!-- ========================= -->
+
+<nav class="topbar">
+
+<div class="logo">
+Expense Tracker
+</div>
+
+<div class="user-area">
+
+<span id="userDisplay"></span>
+
+<button id="loginBtn" class="btn-primary">
+Login with Google
+</button>
+
+<button id="logoutBtn" class="btn-secondary" style="display:none;">
+Logout
+</button>
+
+</div>
+
+</nav>
+
+
+<!-- ========================= -->
+<!-- MAIN APP -->
+<!-- ========================= -->
+
+<div id="appContainer" style="display:none;">
+
+<div class="glass-container">
+
+<header>
+
+<h1>Expense Tracker</h1>
+<p>Manage your finances with style</p>
+
+</header>
+
+
+<!-- DASHBOARD -->
+
+<div class="dashboard-grid">
+
+<div class="stat-card">
+
+<h3>Monthly Budget</h3>
+
+<div class="input-group">
+
+<input type="number" id="budgetInput" placeholder="Set Budget">
+
+<button id="setBudgetBtn" class="btn-small">
+Set
+</button>
+
+</div>
+
+</div>
+
+
+<div class="stat-card highlight">
+
+<h3>Total Expenses</h3>
+
+<p id="totalExpenseDisplay">$0.00</p>
+
+</div>
+
+
+<div class="stat-card highlight">
+
+<h3>Remaining</h3>
+
+<p id="remainingBudgetDisplay">$0.00</p>
+
+</div>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+
+<div class="content-grid">
+
+
+<!-- LEFT SIDE -->
+
+<div class="panel">
+
+<div class="glass-panel">
+
+<h2>Add New Expense</h2>
+
+<form id="expenseForm">
+
+<div class="form-group">
+
+<label>Expense Name</label>
+
+<input type="text" id="expenseName" required placeholder="e.g. Grocery">
+
+</div>
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Amount</label>
+
+<input type="number" id="expenseAmount" required placeholder="0.00">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Category</label>
+
+<select id="expenseCategory">
+
+<option value="Food">Food</option>
+<option value="Travel">Travel</option>
+<option value="Shopping">Shopping</option>
+<option value="Bills">Bills</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Other">Other</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Date</label>
+
+<input type="date" id="expenseDate" required>
+
+</div>
+
+
+<button type="submit" class="btn-primary">
+Add Expense
+</button>
+
+</form>
+
+</div>
+
+
+<!-- EXPENSE TABLE -->
+
+<div class="glass-panel table-container">
+
+<div class="table-header">
+
+<h2>History</h2>
+
+<button id="exportBtn" class="btn-secondary">
+Export Excel
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody id="expenseTableBody">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE ANALYTICS -->
+
+<div class="panel">
+
+<div class="glass-panel">
+
+<h2>Analytics</h2>
+
+<div class="chart-container">
+<canvas id="categoryChart"></canvas>
+</div>
+
+</div>
+
+
+<div class="glass-panel">
+
+<h2>Spending Over Time</h2>
+
+<div class="chart-container">
+<canvas id="timelineChart"></canvas>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- LIBRARIES -->
+<!-- ========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+
+
+<!-- ========================= -->
+<!-- FIREBASE SCRIPT -->
+<!-- ========================= -->
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
