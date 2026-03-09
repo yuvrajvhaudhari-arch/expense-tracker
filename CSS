@@ -1,0 +1,642 @@
+:root{
+
+--primary-gradient:linear-gradient(135deg,#1e3c72,#2a5298);
+--secondary-gradient:linear-gradient(135deg,#6a11cb,#2575fc);
+
+--glass-bg:rgba(15,25,60,0.75);
+--glass-border:rgba(255,255,255,0.15);
+
+--glass-shadow:0 20px 60px rgba(0,0,0,0.6);
+
+--text-color:#ffffff;
+--text-muted:#cfd8ff;
+
+--accent-gold:#ffd700;
+
+--danger-color:#ff4d4d;
+--success-color:#00e676;
+
+--font-main:'Poppins',sans-serif;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:var(--font-main);
+color:var(--text-color);
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow-x:hidden;
+
+background:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3')
+no-repeat center center fixed;
+
+background-size:cover;
+
+}
+
+/* Background Overlay */
+
+.background-overlay{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.6);
+
+z-index:-1;
+
+}
+
+/* Main Container */
+
+.glass-container{
+
+width:95%;
+max-width:1200px;
+
+background:linear-gradient(
+135deg,
+rgba(10,20,60,0.95),
+rgba(20,30,90,0.85)
+);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+border:1px solid var(--glass-border);
+
+box-shadow:var(--glass-shadow);
+
+padding:2rem;
+
+margin:2rem 0;
+
+animation:fadeIn .8s ease-out;
+
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Header */
+
+header{
+text-align:center;
+margin-bottom:2rem;
+}
+
+header h1{
+
+font-size:2.6rem;
+
+font-weight:700;
+
+color:var(--accent-gold);
+
+text-shadow:0 3px 10px rgba(0,0,0,0.5);
+
+}
+
+header p{
+
+color:var(--text-muted);
+
+font-weight:300;
+
+}
+
+/* Dashboard Grid */
+
+.dashboard-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:1.5rem;
+
+margin-bottom:2rem;
+
+}
+
+/* Cards */
+
+.stat-card{
+
+background:linear-gradient(
+145deg,
+rgba(40,60,130,0.9),
+rgba(20,30,80,0.9)
+);
+
+padding:1.5rem;
+
+border-radius:15px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,0.1);
+
+transition:all .3s ease;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-6px) scale(1.02);
+
+box-shadow:0 15px 35px rgba(0,0,0,0.7);
+
+}
+
+.stat-card h3{
+
+font-size:.9rem;
+
+letter-spacing:1px;
+
+margin-bottom:.6rem;
+
+color:var(--text-muted);
+
+text-transform:uppercase;
+
+}
+
+.stat-card p{
+
+font-size:1.9rem;
+
+font-weight:600;
+
+}
+
+.stat-card.highlight{
+
+background:linear-gradient(
+135deg,
+#6a11cb,
+#2575fc
+);
+
+}
+
+/* Budget Input */
+
+.input-group{
+
+display:flex;
+
+gap:6px;
+
+justify-content:center;
+
+}
+
+.input-group input{
+
+padding:6px 10px;
+
+border-radius:6px;
+
+border:none;
+
+width:110px;
+
+text-align:center;
+
+}
+
+/* Layout */
+
+.content-grid{
+
+display:grid;
+
+grid-template-columns:1.5fr 1fr;
+
+gap:2rem;
+
+}
+
+@media(max-width:900px){
+
+.content-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* Glass Panels */
+
+.glass-panel{
+
+background:linear-gradient(
+135deg,
+rgba(15,25,70,0.95),
+rgba(25,35,100,0.85)
+);
+
+border-radius:15px;
+
+padding:1.5rem;
+
+margin-bottom:1.5rem;
+
+border:1px solid rgba(255,255,255,0.1);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+
+}
+
+.glass-panel h2{
+
+margin-bottom:1.5rem;
+
+font-size:1.2rem;
+
+color:var(--accent-gold);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+padding-bottom:.5rem;
+
+}
+
+/* Form */
+
+.form-group{
+margin-bottom:1rem;
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:.5rem;
+
+font-size:.9rem;
+
+color:var(--text-muted);
+
+}
+
+.form-group input,
+.form-group select{
+
+width:100%;
+
+padding:10px;
+
+border-radius:8px;
+
+border:1px solid rgba(255,255,255,0.2);
+
+background:rgba(255,255,255,0.1);
+
+color:white;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+outline:none;
+
+border-color:#6a11cb;
+
+background:rgba(255,255,255,0.2);
+
+}
+
+.form-row{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:1rem;
+
+}
+
+/* Buttons */
+
+.btn-primary{
+
+width:100%;
+
+padding:12px;
+
+background:linear-gradient(
+135deg,
+#6a11cb,
+#2575fc
+);
+
+border:none;
+
+border-radius:10px;
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:all .3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
+
+}
+
+.btn-small{
+
+padding:6px 10px;
+
+background:#6a11cb;
+
+border:none;
+
+border-radius:6px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* Table */
+
+.table-container{
+overflow-x:auto;
+}
+
+.table-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:1rem;
+
+}
+
+.btn-secondary{
+
+padding:6px 10px;
+
+background:rgba(255,255,255,0.2);
+
+border:1px solid rgba(255,255,255,0.3);
+
+border-radius:6px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,0.3);
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+font-size:.9rem;
+
+background:rgba(0,0,0,0.4);
+
+border-radius:10px;
+
+overflow:hidden;
+
+}
+
+th,td{
+
+padding:12px;
+
+text-align:left;
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+}
+
+th{
+
+color:var(--accent-gold);
+
+font-weight:600;
+
+}
+
+tr:hover{
+background:rgba(255,255,255,0.07);
+}
+
+/* Delete Button */
+
+.delete-btn{
+
+background:var(--danger-color);
+
+color:white;
+
+border:none;
+
+padding:5px 10px;
+
+border-radius:5px;
+
+cursor:pointer;
+
+font-size:.8rem;
+
+}
+
+/* Charts */
+
+.chart-container{
+
+position:relative;
+
+height:260px;
+
+width:100%;
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+.glass-container{
+padding:1rem;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+header h1{
+font-size:2rem;
+}
+
+}
+/* Category dropdown main box */
+#expenseCategory{
+
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+
+color:white;
+
+border:1px solid rgba(255,255,255,0.3);
+
+border-radius:8px;
+
+padding:10px;
+
+cursor:pointer;
+
+}
+
+/* Dropdown options */
+#expenseCategory option{
+
+background:#1e2a5a;
+
+color:white;
+
+}
+
+/* Hover effect (some browsers support) */
+#expenseCategory option:hover{
+
+background:#6a11cb;
+
+color:white;
+
+}
+/* ========================= */
+/* TOP NAVBAR (Professional) */
+/* ========================= */
+
+.topbar{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:60px;
+
+display:flex;
+
+align-items:center;
+justify-content:space-between;
+
+padding:0 30px;
+
+background:linear-gradient(
+90deg,
+rgba(19, 24, 45, 0.95),
+rgba(25,35,100,0.95)
+);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+box-shadow:0 8px 30px rgba(0,0,0,0.6);
+
+z-index:999;
+
+}
+
+/* Logo */
+
+.logo{
+
+font-size:1.3rem;
+
+font-weight:600;
+
+color:var(--accent-gold);
+
+}
+
+/* User Area */
+
+.user-area{
+
+display:block;
+
+align-items:center;
+
+gap:15px;
+
+font-size:.9rem;
+
+}
+
+/* Username display */
+
+#userDisplay{
+
+font-weight:500;
+
+color:white;
+
+}
+
+/* Fix layout spacing for navbar */
+
+body{
+
+padding-top:90px;
+
+}
