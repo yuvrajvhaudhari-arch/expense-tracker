@@ -69,7 +69,7 @@ This project is deployed using **GitHub Pages**.
 
 ## 👨‍💻 Author
 
-Developed by **Yuvraj**
+Developed by **Yuvraj**, **Sujit**, **Shruti**, **Pratiksha**
 
 ---
 
